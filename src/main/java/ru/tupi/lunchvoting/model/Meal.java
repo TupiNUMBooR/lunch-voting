@@ -16,7 +16,7 @@ import java.time.LocalDate;
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-public class Meal extends AbstractPersistable<Integer> {
+public class Meal extends BaseEntity {
     @JoinColumn(name = "restaurant_id", nullable = false)
     @ManyToOne(fetch = FetchType.LAZY)
     @OnDelete(action = OnDeleteAction.CASCADE)

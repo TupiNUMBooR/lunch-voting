@@ -8,7 +8,6 @@ import jakarta.validation.constraints.Size;
 import lombok.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
-import org.springframework.data.jpa.domain.AbstractPersistable;
 
 import java.util.List;
 import java.util.Set;
@@ -20,7 +19,7 @@ import java.util.Set;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 @ToString(callSuper = true, exclude = {"password", "votes"})
-public class User extends AbstractPersistable<Integer> {
+public class User extends BaseEntity {
 
     @Column(name = "email", nullable = false, unique = true)
     @Email

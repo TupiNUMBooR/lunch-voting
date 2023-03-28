@@ -15,7 +15,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-public class Restaurant extends AbstractPersistable<Integer> {
+public class Restaurant extends BaseEntity {
     @Column
     @Size(max = 128)
     private String name;
