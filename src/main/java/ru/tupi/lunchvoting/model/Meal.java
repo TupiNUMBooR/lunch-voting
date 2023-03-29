@@ -27,12 +27,12 @@ public class Meal extends BaseEntity {
     @JsonBackReference
     private Restaurant restaurant;
 
-    @Column(name = "dayn", nullable = false)
+    @Column(name = "meal_day", nullable = false)
     @NotNull
     private LocalDate day;
 
     @Column(nullable = false)
-    @Size(max = 128)
+    @Size(max = STRING_MAX_SIZE)
     @NotBlank
     private String name;
 

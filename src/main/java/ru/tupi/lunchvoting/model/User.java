@@ -25,16 +25,16 @@ public class User extends BaseEntity {
     @Column(name = "email", nullable = false, unique = true)
     @Email
     @NotBlank
-    @Size(max = 128)
+    @Size(max = STRING_MAX_SIZE)
     private String email;
 
     @Column(name = "first_name", nullable = false)
-    @Size(max = 128)
+    @Size(max = STRING_MAX_SIZE)
     @NotBlank
     private String firstName;
 
     @Column(name = "last_name", nullable = false)
-    @Size(max = 128)
+    @Size(max = STRING_MAX_SIZE)
     @NotBlank
     private String lastName;
 

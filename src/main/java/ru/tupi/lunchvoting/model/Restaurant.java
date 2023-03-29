@@ -20,7 +20,7 @@ public class Restaurant extends BaseEntity {
 
     @Column(nullable = false, unique = true)
     @NotBlank
-    @Size(max = 128)
+    @Size(max = STRING_MAX_SIZE)
     private String name;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "restaurant", cascade = CascadeType.REMOVE, orphanRemoval = true)
