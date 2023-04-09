@@ -18,9 +18,18 @@ import java.util.Set;
 @Getter
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@AllArgsConstructor
 @ToString(callSuper = true, exclude = {"password", "votes"})
 public class User extends BaseEntity {
+
+    public User(Integer id, String email, String firstName, String lastName, String password, Set<Role> roles, List<Vote> votes) {
+        super(id);
+        this.email = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.password = password;
+        this.roles = roles;
+        this.votes = votes;
+    }
 
     @Column(name = "email", nullable = false, unique = true)
     @Email

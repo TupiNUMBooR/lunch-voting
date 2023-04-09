@@ -15,8 +15,14 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@AllArgsConstructor
 public class Restaurant extends BaseEntity {
+
+    public Restaurant(Integer id, String name, List<Meal> meals, List<Vote> votes) {
+        super(id);
+        this.name = name;
+        this.meals = meals;
+        this.votes = votes;
+    }
 
     @Column(nullable = false, unique = true)
     @NotBlank

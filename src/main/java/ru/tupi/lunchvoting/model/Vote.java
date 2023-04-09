@@ -14,8 +14,14 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@AllArgsConstructor
 public class Vote extends BaseEntity {
+
+    public Vote(Integer id, User user, Restaurant restaurant, LocalDate day) {
+        super(id);
+        this.user = user;
+        this.restaurant = restaurant;
+        this.day = day;
+    }
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
