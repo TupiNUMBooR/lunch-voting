@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.domain.Persistable;
 import org.springframework.data.util.ProxyUtils;
+import org.springframework.util.Assert;
 
 @MappedSuperclass
 //  https://stackoverflow.com/a/6084701/548473
@@ -15,11 +16,16 @@ import org.springframework.data.util.ProxyUtils;
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
 @ToString
 public abstract class BaseEntity implements Persistable<Integer> {
-    protected static final int STRING_MAX_SIZE = 128;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Integer id;
+
+    // doesn't work for hibernate lazy proxy
+    public int id() {
+        Assert.notNull(id, "Entity must have id");
+        return id;
+    }
 
     @JsonIgnore
     @Override

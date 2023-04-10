@@ -1,7 +1,7 @@
-INSERT INTO USERS (ID, EMAIL, FIRST_NAME, LAST_NAME, PASSWORD)
-VALUES (100001, 'admin@lunchvoting.ru', 'Admin_First', 'Admin_Last', '{noop}admin'),
-       (100002, 'user@gmail.com', 'User_First', 'User_Last', '{noop}password'),
-       (100003, 'guest@gmail.com', 'Guest_First', 'Guest_Second', '{noop}password');
+INSERT INTO USERS (ID, NAME, EMAIL, PASSWORD)
+VALUES (100001, 'Admin', 'admin@lunchvoting.ru', '{noop}admin'),
+       (100002, 'User', 'user@gmail.com', '{noop}password'),
+       (100003, 'Guest', 'guest@gmail.com', '{noop}password');
 
 INSERT INTO USER_ROLE (USER_ID, ROLE)
 VALUES (100001, 'ADMIN'),

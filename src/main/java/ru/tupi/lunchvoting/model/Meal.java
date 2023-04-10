@@ -2,9 +2,7 @@ package ru.tupi.lunchvoting.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
 import lombok.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
@@ -18,7 +16,7 @@ import java.time.LocalDate;
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-public class Meal extends BaseEntity {
+public class Meal extends NamedEntity {
 
     @JoinColumn(name = "restaurant_id", nullable = false)
     @ManyToOne(fetch = FetchType.LAZY)
@@ -30,11 +28,6 @@ public class Meal extends BaseEntity {
     @Column(name = "meal_day", nullable = false)
     @NotNull
     private LocalDate day;
-
-    @Column(nullable = false)
-    @Size(max = STRING_MAX_SIZE)
-    @NotBlank
-    private String name;
 
     @Column(nullable = false)
     @Range(min = 0)

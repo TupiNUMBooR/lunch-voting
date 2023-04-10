@@ -19,13 +19,11 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @ToString(callSuper = true, exclude = {"password", "votes"})
-public class User extends BaseEntity {
+public class User extends NamedEntity {
 
-    public User(Integer id, String email, String firstName, String lastName, String password, Set<Role> roles, List<Vote> votes) {
-        super(id);
+    public User(Integer id, String name, String email, String password, Set<Role> roles, List<Vote> votes) {
+        super(id, name);
         this.email = email;
-        this.firstName = firstName;
-        this.lastName = lastName;
         this.password = password;
         this.roles = roles;
         this.votes = votes;
@@ -36,16 +34,6 @@ public class User extends BaseEntity {
     @NotBlank
     @Size(max = STRING_MAX_SIZE)
     private String email;
-
-    @Column(name = "first_name", nullable = false)
-    @Size(max = STRING_MAX_SIZE)
-    @NotBlank
-    private String firstName;
-
-    @Column(name = "last_name", nullable = false)
-    @Size(max = STRING_MAX_SIZE)
-    @NotBlank
-    private String lastName;
 
     @Column(name = "password", nullable = false)
     @Size(min = 6, max = 256)

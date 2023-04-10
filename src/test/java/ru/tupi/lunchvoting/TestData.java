@@ -13,9 +13,13 @@ public class TestData {
     public static final int USER_ID = 100002;
     public static final int GUEST_ID = 100003;
 
-    public static final User admin = new User(ADMIN_ID, "admin@lunchvoting.ru", "Admin_First", "Admin_Last", "{noop}admin", Set.of(Role.ADMIN, Role.USER), null);
-    public static final User user = new User(USER_ID, "user@gmail.com", "User_First", "User_Last", "{noop}password", Set.of(Role.USER), null);
-    public static final User guest = new User(GUEST_ID, "guest@gmail.com", "Guest_First", "Guest_Second", "{noop}password", Set.of(), null);
+    public static final String ADMIN_EMAIL = "admin@lunchvoting.ru";
+    public static final String USER_EMAIL = "user@gmail.com";
+    public static final String GUEST_EMAIL = "guest@gmail.com";
+
+    public static final User admin = new User(ADMIN_ID, "Admin", ADMIN_EMAIL, "{noop}admin", Set.of(Role.ADMIN, Role.USER), null);
+    public static final User user = new User(USER_ID, "User", USER_EMAIL, "{noop}password", Set.of(Role.USER), null);
+    public static final User guest = new User(GUEST_ID, "Guest", GUEST_EMAIL, "{noop}password", Set.of(), null);
 
     public static final int RESTAURANT_1_ID = 100011;
     public static final int RESTAURANT_2_ID = 100012;
