@@ -1,7 +1,7 @@
 package ru.tupi.lunchvoting.web;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.http.MediaType;
+import org.springframework.hateoas.MediaTypes;
 import org.springframework.security.test.context.support.WithUserDetails;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
@@ -15,7 +15,7 @@ public class RootControllerTest extends AbstractControllerTest {
     void get() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/api/users"))
                 .andExpect(status().isOk())
-                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON));
+                .andExpect(content().contentTypeCompatibleWith(MediaTypes.HAL_JSON_VALUE));
 //                    .andExpect(result ->
 //                            assertThat(JsonUtil.readValue(getContent(result), clazz))
 //                                    .usingRecursiveComparison().ignoringFields()
