@@ -41,3 +41,8 @@ spring:
 #    visibility.getter: none
 #    visibility.setter: none
 #    visibility.is-getter: none
+
+logging:
+  level:
+    root: WARN
+    org.springframework.security: DEBUG
