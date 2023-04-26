@@ -13,10 +13,10 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-import ru.tupi.lunchvoting.model.AuthUser;
 import ru.tupi.lunchvoting.model.Role;
 import ru.tupi.lunchvoting.model.User;
 import ru.tupi.lunchvoting.repository.UserRepository;
+import ru.tupi.lunchvoting.web.user.AuthUser;
 
 import java.util.Optional;
 
